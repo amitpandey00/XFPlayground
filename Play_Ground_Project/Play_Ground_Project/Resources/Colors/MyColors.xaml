@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Play_Ground_Project.Resources.Colors.MyColors">
+
+    <Color x:Key="CustomColor-Bold">#CFD0D0</Color>
+    <Color x:Key="CustomColor-Medium">#4B4E4F</Color>
+    <Color x:Key="CustomColor-Medium1">#2A2D2F</Color>
+    <Color x:Key="CustomColor-Medium2">#8C8E8F</Color>
+    <Color x:Key="CustomBGColor-Medium">Transparent</Color>
+
+
+
+</ResourceDictionary>
