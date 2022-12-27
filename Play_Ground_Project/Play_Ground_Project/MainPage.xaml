@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Play_Ground_Project.MainPage"
+             xmlns:local="clr-namespace:Play_Ground_Project.ModelView"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             BackgroundColor="Black"
+             >
+    <ContentPage.BindingContext>
+        <local:PermissionListViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <StackLayout Padding="24,40,0,0">
+            <Label TextColor="#CFD0D0" FontSize="20" FontFamily="Montserrat-Bold">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="we take the"/>
+                        <Span Text="{x:Static system:Environment.NewLine}"/>
+                        <Span Text="following permissions"/>
+                        <Span Text="{x:Static system:Environment.NewLine}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Text="this will make the app experience smoother for you" TextColor="#4B4E4F" FontSize="12" FontFamily="Montserrat" Padding="0,0,0,0"/>
+        </StackLayout>
+        <CollectionView ItemsSource="{Binding PermissionsPageView}" Margin="0,42,0,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="Transparent">
+                        <Grid RowDefinitions="auto,auto,1" ColumnDefinitions="auto,auto,*">
+                            <!--Icon-->
+                            <Image Grid.RowSpan="2" Source="{Binding Icon}" VerticalOptions="Start"/>
+
+                            <!--Title-->
+                            <Label Grid.Column="1" Margin="10,0,0,0" Text="{Binding Name}" FontFamily="Montserrat-Bold" FontSize="12" TextColor="#CFD0D0" HorizontalOptions="Start"/>
+
+                            <!--Permission Type-->
+                            <Grid Grid.Column="2" HorizontalOptions="Start" HeightRequest="30" WidthRequest="80" Margin="0,-5,0,0" >
+                                <Frame BackgroundColor="Gray" Opacity="0.5" Margin="0,5,0,0" CornerRadius="10"></Frame>
+                                <Label Text="{Binding Type}" FontFamily="Montserrat" FontSize="8" Padding="10,8,0,0" TextColor="#8C8E8F"/>
+                            </Grid>
+
+                            <!--Decription-->
+                            <Label Padding="42,0,0,21" FontSize="11" FontFamily="Montserrat" Grid.ColumnSpan="3" Grid.Row="1" Text="{Binding Description}" TextColor="#4B4E4F" HorizontalOptions="End"/>
+
+                            <!--Separator-->
+                            <BoxView Grid.Row="2" Grid.ColumnSpan="3" >
+                                <!--gradient--> 
+                                <BoxView.Background>
+                                    <LinearGradientBrush EndPoint="1, 0">
+                                        <GradientStop Color="Transparent" Offset="0"/>
+                                        <GradientStop Color="#343739" Offset="0.5"/>
+                                        <GradientStop Color="Transparent" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </BoxView.Background>
+                            </BoxView>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+        <!--grant permission option-->
+         <Grid RowDefinitions="48" ColumnDefinitions="210" Padding="0,0,20,40" HorizontalOptions="Center" HeightRequest="20" WidthRequest="50">
+            <Frame Padding="151,0,0,0" HasShadow="True" HeightRequest="10" WidthRequest="20" CornerRadius="100" BackgroundColor="Transparent" BorderColor="Gray" Opacity="0.5"/>
+            <Label Text="grant permission"  FontFamily="Montserrat" HorizontalOptions="Start" TextColor="#CFD0D0" FontSize="10" Padding="30,15,0,0"/>
+            <ImageButton Padding="150,5,0,5" Source="icon_btnRightArow.png" HeightRequest="10" WidthRequest="10" BackgroundColor="Transparent"  CornerRadius="70"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>
