@@ -1,8 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Play_Ground_Project.App">
+             x:Class="Play_Ground_Project.App"
+             xmlns:color="clr-namespace:Play_Ground_Project.Resources.Colors">
     <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <color:MyColors/>
+            </ResourceDictionary.MergedDictionaries>
+            
+            <Style x:Key="MyLabelBold" TargetType="Label">
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontFamily" Value="Montserrat-Bold"/>
+            </Style>
+            
+            <Style x:Key="MyLabelBoldfont" TargetType="Label">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontFamily" Value="Montserrat-Bold"/>
+            </Style>
+            
+            <Style x:Key="MyLabelMeduim" TargetType="Label">
+                <Setter Property="FontSize" Value="11"/>
+                <Setter Property="FontFamily" Value="Montserrat"/>
+            </Style>
+            
+            <Style x:Key="MyLabelsize" TargetType="Label">
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontFamily" Value="Montserrat"/>
+            </Style>
+            
+            <Style x:Key="MyLabelEnd" TargetType="Label">
+                <Setter Property="FontSize" Value="14"/>
+                 
+                <Setter Property="FontFamily" Value="Montserrat"/>
+            </Style>
+
+
+
+
+
+
+
+
+
+        </ResourceDictionary>
 
     </Application.Resources>
 </Application>
